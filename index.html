@@ -1,0 +1,108 @@
+<h1 id="lecture-1">Lecture 1</h1>
+<p>Course book: Data Mining: Concepts and Techniques (http://romisatriawahono.net/lecture/dm/book/Han%20-%20Data%20Mining%20Concepts%20and%20Techniques%203rd%20Edition%20-%202012.pdf)</p>
+<p>Lecture, Labs and TEN1. Labs will be in pairs.</p>
+<h2 id="why-data-mining">Why data mining?</h2>
+<ul>
+<li>The amount of data has grown significantly the last couple of years (from tera to petabytes)</li>
+<li>New ways to collect data: from databases, web-crawling, sensors etc. Sources:
+<ul>
+<li>Web, e-commerce, transactions, stocks</li>
+<li>Remote sensing, bio informatics, simulations</li>
+<li>new, digital cameras, YouTube ...</li>
+</ul></li>
+<li>We currently have huge amount of data and for many cases we do not know how to extract the knowledge from the data.</li>
+</ul>
+<h3 id="ex">Ex:</h3>
+<p>For market analysis it's very important to analyse the purchasing patterns of consumers.</p>
+<p>For fraud detection by outliers analysis or clustering. Auto insurance fraud though ring of collisions. Money laundering monitoring through suspicious transactions.</p>
+<h2 id="evolution-of-database-technology">Evolution of Database Technology</h2>
+<ul>
+<li>Database creation started in the 1960s with IMS and networked DBMS</li>
+<li>During the 70s the relational models came into use (currently the largest model used in industry due to tried and true technology)</li>
+<li>During the 80s Advanced data models such as extended-relations, OO, deductive)</li>
+<li>The 90s Data mining and data warehousing started taking of together with the wwww.</li>
+<li>The last decade have focused on Stream data management - where you only look at a small part or only look at a data point only once, data mining, and integration of web technologies.</li>
+<li>During the 2010s we get distributed databases, NoSQL, NewSQL and semantic web.</li>
+</ul>
+<h2 id="what-is-data-mining">What is data mining?</h2>
+<ul>
+<li>Extraction of &quot;interesting&quot; patterns or knowledge from huge amount of data. Interesting data should be: non-trivial, implicit, previously unknown and potentially useful)</li>
+<li>Data mining has also been called: Knowledge mining/data archeology/data dredging, pattern analysis.</li>
+</ul>
+<h2 id="knowledge-discovery-process">Knowledge Discovery Process</h2>
+<p>Databases --[Data Cleaning]-&gt; Data Warehouse --[Selection and transformation]-&gt; Task-relevant data --[Selection and transformation / Data mining] --[Pattern evaluation and presentation]-&gt; Knowledge</p>
+<p>In many cases the majority of time and effort is put on preprocessing of the data just to get it ready for analysis.</p>
+<h2 id="why-data-preprocessing">Why data preprocessing</h2>
+<p>Data in the real world is dirty, * Incomplete - lacking attribute values, lacking attributes, memory corruption * ex: occupation=&quot;&quot; * Noisy - errors or outliers in the data * ex: salary=&quot;-10&quot; * Inconsistent - containing discrepancies in codes or names, having multiple attributes that contradicts each other * ex: age=&quot;42&quot; Birth date=&quot;03/07/1997&quot;, rating = {1,2,3} rating = {a,b,c}</p>
+<h2 id="why-is-data-dirty">Why is data dirty</h2>
+<ul>
+<li><p>Incomplete data may come from &quot;Not applicable&quot; values during collection, different considerations between time of collection and analysis</p></li>
+<li><p>Noise data may come from faulty data collection instruments, human or computer error during data entry, error in transmission</p></li>
+<li><p>Inconsistent data may come from integration of different data sources, functional dependency violations</p></li>
+<li><p>We also need to clean duplicates from the data.</p></li>
+</ul>
+<h2 id="why-is-data-pre-processing-important">Why is Data pre-processing important?</h2>
+<p>No quality data will yield no quality results, Descriptions need to be based on quality data. Data warehouses need to be kept concise and up-to-date.</p>
+<h2 id="typical-data-mining-system">Typical data mining system</h2>
+<pre><code>+-----------+
+|   GUI     |
++-----------+
+  |     |
++------------+
+|Pattern eval|
++------------+
+  |     |
++-------------+
+| Data Mining |
++-------------+
+  |     |
++-----------+
+| Databases |
++-----------+
+      |
+(Cleaning and integration)</code></pre>
+<p>The reason for the arrows in both direction is that we might want to use parts of the data mining in the previous steps. Similar to a compiler</p>
+<h2 id="why-not-traditional-data-analysis">Why not traditional data analysis?</h2>
+<ul>
+<li>Huge amount of data means the algorithms need to be highly scalable.</li>
+<li>High dimensionality causes micro arrays that may have tens of thousands of dimensions.</li>
+<li>High complexity of the data such
+<ul>
+<li>Time series data - sequential data</li>
+<li>Data streams and sensor data</li>
+<li>Structured data - graphs, multilinked</li>
+<li>Heterogeneous databases and legacy systems</li>
+<li>Spatial, multimedia, text and web data</li>
+</ul></li>
+</ul>
+<h2 id="classification-schemes">Classification Schemes</h2>
+<ul>
+<li>General functionality
+<ul>
+<li>Descriptive data - can i find some common properties for my current data</li>
+<li>Predictive data - can i find some rules or associations that make me be able to predict future data points</li>
+</ul></li>
+</ul>
+<h2 id="what-kind-of-data">What kind of data?</h2>
+<ul>
+<li><p>Relational databases and warehouses that are database oriented data sets - data related to products,</p></li>
+<li><p>Advanced data sets such as OR-databases, Time series, Spatial, Text, Streams, and www data These sets will result in more complex management, such as keeping track of object relations, everything that requires the application to manage the evolution of data over certain dimensions.</p></li>
+</ul>
+<h2 id="what-kind-of-patterns">What kind of patterns?</h2>
+<p>Concept/class descriptions: * Characterization: summarizing the data of the class under observation in general terms Characteristics of customers who spend more than a certain amount... * Discrimination: comparing target class with other classes, checking contrasts and outlines of different classes. Compare different product categories on whether they increase or decrease in sales.</p>
+<p>Frquentits patterns, association, correlations * Frequent itemset * Frequent sequential pattern * Frequent structured pattern</p>
+<p>ex:</p>
+<pre><code>buy(X,&quot;Diapers&quot;) -&gt; buy(X,&quot;Beer&quot;) [support=0.5%,confidence=75%]</code></pre>
+<p>For a large majority this relation does not need to apply, what in this case is important is that we have found that given that someone buys diapers, a high confidence that they also will buy beer.</p>
+<p>Classification and prediction</p>
+<p>Construct models that describe and disingusish classes or concpets for future prediction preict som unknown or missing numerical values</p>
+<ul>
+<li>Cluster analysis</li>
+<li>Outlier analysis</li>
+<li>Trend and evolution analysis</li>
+</ul>
+<p>An important aspect of data mining is that it might generate thousands of patterns that may not be of interest or usefull. A sugested approach is to be human centered, query based, focused on mining to help the algorithm.</p>
+<p>A pattern is interesting if it is easily understood by humans, valid for new data points, potentially usefull, novel, or validates an hypothesis we seek to confirm.</p>
+<p>The interestingness can be evaluated either objectivley by statistics and structures of pattern or subjective based on user beleief in the data.</p>
+<h2 id="fina-all-or-only-interesting-patterns">Fina all or only interesting patterns</h2>
+<p>Heuristic vs exhaustive search Association vs classification vs clustering</p>
