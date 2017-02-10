@@ -1,0 +1,54 @@
+<h1 id="association-analysis">Association analysis</h1>
+<p>Lectures based on <a href="http://rakesh.agrawal-family.com/papers/vldb94apriori_rj.pdf">this</a></p>
+<h2 id="association-rules">Association Rules</h2>
+<ul>
+<li>Assume access to some transaction data.</li>
+<li>We are interested in finding rules on the form <span class="math inline"><em>i</em><sub>1</sub>, ..., <em>i</em><sub><em>m</em></sub> − &gt;<em>i</em><sub><em>m</em> + 1</sub>, ...<em>i</em><sub><em>n</em></sub></span>
+<ul>
+<li>i.e given previous items bought we want to find items that are likely to be bought in the future.</li>
+</ul></li>
+<li>Application: market basket analysis to support business decisions.</li>
+</ul>
+<p>Example: <span class="math inline"><em>m</em><em>i</em><em>l</em><em>k</em>, <em>e</em><em>g</em><em>g</em><em>s</em> − &gt;<em>b</em><em>r</em><em>e</em><em>a</em><em>d</em>, <em>b</em><em>u</em><em>t</em><em>t</em><em>e</em><em>r</em></span></p>
+<p><span class="math inline"><em>S</em><em>m</em><em>o</em><em>k</em><em>i</em><em>n</em><em>g</em> − &gt;<em>C</em><em>a</em><em>n</em><em>c</em><em>e</em><em>r</em></span> (higher probability) <span class="math inline"><em>C</em><em>a</em><em>n</em><em>c</em><em>e</em><em>r</em> − &gt;<em>S</em><em>m</em><em>o</em><em>k</em><em>i</em><em>n</em><em>g</em></span> (Not causal, cancer does not result in smoking)</p>
+<ul>
+<li>We are interested in finding rules on the form described above with user defined minimum-support and confidence, where
+<ul>
+<li>Support = fraction for the transactions which contain X and Y (<span class="math inline"><em>p</em>(<em>X</em>, <em>Y</em>)</span>)</li>
+<li>Support = how general the rule is</li>
+<li>Confidence = fraction of the transactions that contain X which also contains Y (<span class="math inline"><em>p</em>(<em>Y</em>|<em>X</em>)</span>).</li>
+<li>Confidence = how accurate the rule is</li>
+<li>Confidence = support(X,Y) / support(X).</li>
+</ul></li>
+</ul>
+<p>Example:</p>
+<pre><code>Transaction id  Items bought
++---------------+-----------+
+|1              |a,b,c      |
++---------------+-----------+
+|2              |a,c,d      |
++---------------+-----------+
+|3              |a,d,e      |
++---------------+-----------+
+|4              |b,e,f      |
++---------------+-----------+
+|5              |b,c,d,e,f  |
++---------------+-----------+</code></pre>
+<p><span class="math inline"><em>a</em> − &gt;<em>d</em></span> has support 0.6 and confidence 1 (<span class="math inline">3/5</span>), (<span class="math inline">3/3</span>) <span class="math inline"><em>d</em> − &gt;<em>a</em></span> has support 0.6 and confidence 0.75</p>
+<ul>
+<li>We are not interested in all rules, only rules with a minimum support and minimum confidence</li>
+</ul>
+<h2 id="frequent-itemsets">Frequent Itemsets</h2>
+<ul>
+<li>Itemset is short form of &quot;set of item&quot;</li>
+<li>Frequent/Large itemset ({A,D}) is a frequent item set in previous example when min support = 0.5</li>
+<li>Find the the desired rules in two steps
+<ul>
+<li>Find all frequent itemsets via the apriori or FP grow algorithm
+<ul>
+<li>Every subset of a frequent itemset is frequent alternatively: every superset of an infrequent itemset is infrequent (below minimum support)</li>
+</ul></li>
+<li>Generate all the rules within min confidence from the frequent itemsets.</li>
+</ul></li>
+</ul>
+<h2 id="apriori-algorithm">Apriori Algorithm</h2>
