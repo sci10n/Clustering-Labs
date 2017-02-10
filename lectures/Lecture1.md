@@ -97,7 +97,7 @@ The reason for the arrows in both direction is that we might want to use parts o
 * High complexity of the data such
 	* Time series data - sequential data
 	* Data streams and sensor data
-	* Structured data - graphs, multilinked 
+	* Structured data - graphs, multi-linked 
 	* Heterogeneous databases and legacy systems
 	* Spatial, multimedia, text and web data
 
@@ -135,19 +135,19 @@ For a large majority this relation does not need to apply, what in this case is 
 
 Classification and prediction
 
-Construct models that describe and disingusish classes or concpets for future prediction
-preict som unknown or missing numerical values
+Construct models that describe and distinguish classes or concepts for future prediction
+predict some unknown or missing numerical values
 
 * Cluster analysis
 * Outlier analysis
 * Trend and evolution analysis
 
 
-An important aspect of data mining is that it might generate thousands of patterns that may not be of interest or usefull. A sugested approach is to be human centered, query based, focused on mining to help the algorithm.
+An important aspect of data mining is that it might generate thousands of patterns that may not be of interest or useful. A suggested approach is to be human centered, query based, focused on mining to help the algorithm.
 
-A pattern is interesting if it is easily understood by humans, valid for new data points, potentially usefull, novel, or validates an hypothesis we seek to confirm.
+A pattern is interesting if it is easily understood by humans, valid for new data points, potentially useful, novel, or validates an hypothesis we seek to confirm.
 
-The interestingness can be evaluated either objectivley by statistics and structures of pattern or subjective based on user beleief in the data.
+The interestingness can be evaluated either objectively by statistics and structures of pattern or subjective based on user belief in the data.
 
 ## Fina all or only interesting patterns
 
