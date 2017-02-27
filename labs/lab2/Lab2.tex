@@ -73,4 +73,11 @@ From these we can see that the first cluster is mostly characterized by the dime
 We do not necessarily need to have as many clusters as classes, but if we want to have a reasonable chance of correctly predicting class labels from clusters, we need at least as many clusters as classes. If we have more clusters, it is then not a problem to have more than one cluster map to the same class. These may for instance correspond to further subdivisions of flower types. 
 
 We experimented with 6 clusters, twice as many as the classes. What happened is that rules satisfying our previously stated constraints were only found for 3 of the clusters. The other clusters also contained points, but just a few so that the minimum confidence was not satisfied, because most other points belonging to the same classes were in the larger clusters. From this we can conclude that the classes are well separable and that 3 clusters are good enough to obtain an accurate classification.
+
+\begin{lstlisting}
+ 690. sepalwidth='(2.8-3.6]' petallength='(4.933333-inf)' 28 		==> cluster=cluster2 26    <conf:(0.93)>
+ 709. sepalwidth='(2.8-3.6]' petallength='(2.966667-4.933333]' 24 	==> cluster=cluster1 22    <conf:(0.92)> 
+ 726. sepalwidth='(2.8-3.6]' petallength='(2.966667-4.933333]' petalwidth='(0.9-1.7]' 21 ==> cluster=cluster1 19    <conf:(0.9)>
+\end{lstlisting}
+
 \end{document}
