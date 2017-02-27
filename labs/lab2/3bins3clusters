@@ -1,0 +1,6 @@
+6. petallength='(-inf-2.966667]' 50 ==> cluster=cluster3 50    							 <conf:(1)> 
+10. petalwidth='(-inf-0.9]' 50 ==> cluster=cluster3 50  								 <conf:(1)> 
+51. petallength='(2.966667-4.933333]' petalwidth='(0.9-1.7]' 48 ==> cluster=cluster1 48  <conf:(1)> 
+277. sepallength='(5.5-6.7]' petallength='(2.966667-4.933333]' petalwidth='(0.9-1.7]' 33 ==> cluster=cluster1 33    <conf:(1)> 
+106. petallength='(4.933333-inf)' petalwidth='(1.7-inf)' 40 ==> cluster=cluster2 40      <conf:(1)> 
+284. sepalwidth='(2.8-3.6]' petalwidth='(1.7-inf)' 29 ==> cluster=cluster2 29   		 <conf:(1)> 
