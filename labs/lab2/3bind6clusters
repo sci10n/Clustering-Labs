@@ -1,3 +1,7 @@
- 690. sepalwidth='(2.8-3.6]' petallength='(4.933333-inf)' 28 ==> cluster=cluster2 26    <conf:(0.93)> lift:(3.48) lev:(0.12) [18] conv:(6.84)
- 709. sepalwidth='(2.8-3.6]' petallength='(2.966667-4.933333]' 24 ==> cluster=cluster1 22    <conf:(0.92)> lift:(3.06) lev:(0.1) [14] conv:(5.6)
- 726. sepalwidth='(2.8-3.6]' petallength='(2.966667-4.933333]' petalwidth='(0.9-1.7]' 21 ==> cluster=cluster1 19    <conf:(0.9)> lift:(3.02) lev:(0.08) [12] conv:(4.9)
+ 31. petallength='(4.933333-inf)' petalwidth='(1.7-inf)' 40 	==> cluster=cluster2 40    <conf:(1)> 
+ 48. sepallength='(5.5-6.7]' petallength='(2.966667-4.933333]' 39 ==> cluster=cluster1 39  <conf:(1)> 
+ 49. sepallength='(5.5-6.7]' petalwidth='(0.9-1.7]' 38 			==> cluster=cluster1 38    <conf:(1)> 
+ 551. sepalwidth='(3.6-inf)' petallength='(-inf-2.966667]' 13 ==> cluster=cluster3 13    <conf:(1)> 
+ 77. sepalwidth='(2.8-3.6]' petallength='(-inf-2.966667]' 36 	==> cluster=cluster5 36    <conf:(1)>
+ 83. sepalwidth='(2.8-3.6]' petalwidth='(-inf-0.9]' 36 			==> cluster=cluster5 36    <conf:(1)>
+ 656. sepallength='(-inf-5.5]' sepalwidth='(-inf-2.8]' petallength='(2.966667-4.933333]' 11 ==> cluster=cluster6 11    <conf:(1)> 
