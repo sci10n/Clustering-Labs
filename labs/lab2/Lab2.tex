@@ -42,7 +42,12 @@ The frequent itemsets in this case correspond to the frequent attribute-value se
 \section{Clustering through association analysis}
 By using the default settings for the Apriori algorithm, we do not get enough rules to cover all clusters. Instead we used $numRules=1000$, $metricType=confidence$ and $minMetric=0.9$. In this way we obtain 1000 rules and we keep what has more than 90\% confidence. The following are the interesting rules that we got.
 \begin{lstlisting}
-%rules
+6. petallength='(-inf-2.966667]' 50 							==> cluster=cluster3 50 	<conf:(1)> 
+10. petalwidth='(-inf-0.9]' 50 									==> cluster=cluster3 50  	<conf:(1)> 
+51. petallength='(2.966667-4.933333]' petalwidth='(0.9-1.7]' 48 ==> cluster=cluster1 48  	<conf:(1)> 
+277. sepallength='(5.5-6.7]' petallength='(2.966667-4.933333]' petalwidth='(0.9-1.7]' 33 ==> cluster=cluster1 33    <conf:(1)> 
+106. petallength='(4.933333-inf)' petalwidth='(1.7-inf)' 40 	==> cluster=cluster2 40     <conf:(1)> 
+284. sepalwidth='(2.8-3.6]' petalwidth='(1.7-inf)' 29 			==> cluster=cluster2 29   	<conf:(1)> 
 \end{lstlisting}
 The reason that we do not want to have the class attribute in the antecedent is that it is what we want to predict to begin with, so when we have a new flower to consider we do not have its class at our disposal. Moreover we only want the cluster attribute in the consequent, because the other attributes we want to use to predict, not to be predicted.
 
@@ -55,7 +60,12 @@ We tried using 6 bins. For k-means, we actually obtain a perfect result with no 
 
 We obtain the following rules:
 \begin{lstlisting}
-% rules
+3. 	petallength='(-inf-1.983333]' 50 							==> cluster=cluster1 50    <conf:(1)>
+12. petalwidth='(-inf-0.5]' 49 									==> cluster=cluster1 49    <conf:(1)> 
+61. sepallength='(5.5-6.1]' petallength='(3.95-4.933333]' 21 	==> cluster=cluster2 21    <conf:(1)>
+132.petallength='(3.95-4.933333]' petalwidth='(0.9-1.3]' 18 	==> cluster=cluster2 18    <conf:(1)> 
+75. sepallength='(6.1-6.7]' petallength='(4.933333-5.916667]' 20==> cluster=cluster3 20    <conf:(1)>
+127.sepalwidth='(2.8-3.2]' petallength='(4.933333-5.916667]' 18 ==> cluster=cluster3 18    <conf:(1)>
 \end{lstlisting}
 From these we can see that the first cluster is mostly characterized by the dimensions of the petals, while the second and third clusters are characterized by a mix of attribute values. The clustering however is not so good, because 31.3\% of the flowers are in the incorrect cluster. This is a worse result, so it seems that we 
 
