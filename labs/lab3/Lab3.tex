@@ -13,17 +13,25 @@ For k-Means, we only have the options of Euclidean or Manhattan distance. Both a
 
 When plotting attributes against classification, it can be seen that there is considerable overlap and no well-defined boundary between the two classes. Under these conditions it is understandably quite hard to cluster, since similar points are supposed to lie close to each other in order for the algorithms to succeed.
 
-
-
 \section{Association analysis}
 Association analysis does not require points that have the same classification to be close together. Therefore it may be easier to find rules that correctly classify points, so long as there is a pattern to be found.
 
 We remove those rules where the antecedent is a superset of the antecedent of another rule, because then it is redundant. This is not the case in general but only when the more general rules have 100\% confidence. This is because if the confidence was lower, then the rules with a superset-antecedent would provide additional information and therefore it would not be wise to discard them. For cluster 1, we end up with the following rules.
 
 % rules here
-\begin{lstlisting}
-bla
-\end{lstlisting}
+\begin{table}[]
+\centering
+\caption{Association rules}
+\label{my-label}
+\begin{tabular}{llll}
+\hline
+Parameters & Cluster & Occurences & Confidience \\ \hline
+attribute 5 = 1 &\vline 1 &\vline 29 &\vline 1 \\ \hline
+attribute 1 = 3 attribute 2 = 3 &\vline 1 &\vline 17 &\vline 1 \\ \hline
+attribute 1 = 2 attribute 2 = 2 &\vline 1 &\vline 15 &\vline 1 \\ \hline
+attribute 1 = 1 attribute 2 = 1 &\vline 1 &\vline 9  &\vline 1\\ \hline
+\end{tabular}
+\end{table}
 
 These rules then encompass both clusters since everything that does not belong to cluster 1 must belong to cluster 0.
 
